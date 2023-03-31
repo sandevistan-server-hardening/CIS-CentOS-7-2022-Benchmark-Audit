@@ -1,0 +1,1 @@
+echo "Testing 1.8.2 Ensure GDM login banner is configured"

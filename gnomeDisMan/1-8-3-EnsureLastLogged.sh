@@ -1,0 +1,1 @@
+echo "Testing 1.8.3 Ensure last logged in user display is disabled"

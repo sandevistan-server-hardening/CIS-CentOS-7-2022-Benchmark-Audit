@@ -1,0 +1,556 @@
+# MANDATORY ACCESS CONTROL
+# Test for 1.6.1.1 ensuring SELinux is installed
+source ./mandatoryAccessControl/1-6-1-1-SELinuxInstalled.sh
+
+# Test for 1.6.1.2 Ensuring SELinux is not disabled
+source ./mandatoryAccessControl/1-6-1-2-SELinuxNotDisabled.sh
+
+# Test for 1.6.1.3 Ensure SELinux policy is configured
+source ./mandatoryAccessControl/1-6-1-3-SELinuxPolicyEnabled.sh
+
+# Test for 1.6.1.4 Ensure the SELinux mode is enforcing or permissive
+source ./mandatoryAccessControl/1-6-1-4-SELinuxEnforceOrPermissive.sh
+
+# Test for 1.6.1.5 Ensure the SELinux mode is enforcing
+source ./mandatoryAccessControl/1-6-1-5-SELinuxModeEnforce.sh
+
+# Test for 1.6.1.6 Ensure no unconfined services exist
+source ./mandatoryAccessControl/1-6-1-6-NoUnconfinedServices.sh
+
+# Test for 1.6.1.7 Ensure SETroubleshoot is not installed
+source ./mandatoryAccessControl/1-6-1-7-SETroubleshootNotInstalled.sh  
+
+# Test for 1.6.1.8 Ensure the MCS Translation Service (mcstrans) is not installed
+source ./mandatoryAccessControl/1-6-1-8-MSCTransNotInstalled.sh
+
+
+
+# USER ACCOUNTS AND ENVIRONMENT
+# Test for 5.5.1.1 Ensure password expiration is 365 days or less (Automated)
+source ./userAccountsAndEnvironment/5-5-1-1-PWExpiration.sh
+
+# Test for 5.5.1.2 Ensure minimum days between password changes is configured (Automated)
+source ./userAccountsAndEnvironment/5-5-1-2-MinimumPWChanges.sh
+
+# Test for 5.5.1.3 Ensure password expiration warning days is 7 or more (Automated)
+source ./userAccountsAndEnvironment/5-5-1-3-PWExpirationWarning.sh
+
+# Test for 5.5.1.4 Ensure inactive password lock is 30 days or less (Automated)
+source ./userAccountsAndEnvironment/5-5-1-4-InactivePW.sh
+
+# Test for 5.5.1.5 Ensure all users last password change date is in the past (Automated)
+source ./userAccountsAndEnvironment/5-5-1-5-LastPWChange.sh
+
+# Test for 5.5.2 Ensure system accounts are secured (Automated)
+source ./userAccountsAndEnvironment/5-5-2-AccountsSecured.sh
+
+# Test for 5.5.3 Ensure default group for the root account is GID 0 (Automated)
+source ./userAccountsAndEnvironment/5-5-3-DefaultGroupRootGID.sh
+
+# Test for 5.5.4 Ensure default user shell timeout is configured (Automated)
+source ./userAccountsAndEnvironment/5-5-4-DefaultUserTimeout.sh
+
+# Test for 5.5.5 Ensure default user umask is configured (Automated)
+source ./userAccountsAndEnvironment/5-5-5-DefaulUserUMaskConfig.sh
+
+# Test for 5.6 Ensure root login is restricted to system console (Manual)
+source ./userAccountsAndEnvironment/5-6-RootLoginRestricted.sh
+
+# Test for 5.7 Ensure access to the au command is restricted (Automated)
+source userAccountsAndEnvironment/5-7-AccessAURestricted.sh
+
+
+
+# SYSTEM FILE PERMISSIONS
+# Running test for System File Permissions
+# Test for 6.1.1 Audit system file permissions
+source ./systemFilePermissions/6-1-1-AuditSysFilePermissions.sh
+
+# Test for 6.1.2 Ensure permissions on /etc/passwd are configured
+source ./systemFilePermissions/6-1-2-PermConfig-passwd.sh
+
+# Test for 6.1.3 Ensure permissions on /etc/passwd- are configured
+source ./systemFilePermissions/6-1-3-PermConfig-passwd-.sh
+
+# Test for 6.1.4 Ensure permissions on /etc/shadow are configured
+source ./systemFilePermissions/6-1-4-PermConfig-shadow.sh
+
+# Test for 6.1.5 Ensure permissions on /etc/shadow- are configured
+source ./systemFilePermissions/6-1-5-PermConfig-shadow-.sh
+
+# Test for 6.1.6 Ensure permissions on /etc/gshadow- are configured
+source ./systemFilePermissions/6-1-6-PermConfig-gshadow-.sh
+
+# Test for 6.1.7 Ensure permissions on /etc/gshadow are configured
+source ./systemFilePermissions/6-1-7-PermConfig-gshadow.sh
+
+# Test for 6.1.8 Ensure permissions on /etc/group are configured
+source ./systemFilePermissions/6-1-8-PermConfig-group.sh
+
+# Test for 6.1.9 Ensure permissions on /etc/group- are configured
+source ./systemFilePermissions/6-1-9-PermConfig-group-.sh
+
+# Test for 6.1.10 Ensure no world writable files exist
+source ./systemFilePermissions/6-1-10-NoWordFiles.sh
+
+# Test for 6.1.11 Ensure no unowned files or directories exist
+source ./systemFilePermissions/6-1-11-NoUnownOrDirec.sh
+
+# Test for 6.1.12 Ensure no ungrouped files or directories exist
+source ./systemFilePermissions/6-1-12-NoUngroupOrDirec.sh
+
+# Test 6.1.13 Audit SUID executables
+source ./systemFilePermissions/6-1-13-SUIDExec.sh
+
+# Test for 6.1.14 Audit SGID executables
+source ./systemFilePermissions/6-1-14-SGIDExec.sh
+
+
+
+# CONFIGURE SOFTWARE UPDATES
+# Test for 1.2.1 Ensure GPG keys are configured
+source ./configureSoftwareUpdates/1-2-1-GPGKeysConf.sh
+
+# Test for 1.2.2 Ensure package manager repositories are configured
+source ./configureSoftwareUpdates/1-2-2-ManRepConfig.sh
+
+# Test for 1.2.3 Ensure gpgcheck is globally activated
+source ./configureSoftwareUpdates/1-2-3-GPGActivated.sh
+
+
+
+# CONFIGURE SUDO
+# Test for 5.2.1 Ensure sudo is installed
+source ./configureSudo/5-2-1-SudoInstall.sh
+
+# Test for 5.2.2 Ensure sudo commands use pty
+source ./configureSudo/5-2-2-SudoUsePTY.sh
+
+# Test for 5.2.3 Ensure sudo log file exists
+source ./configureSudo/5-2-3-SudoLogFile.sh
+
+
+
+# CONFIGURE SSH SERVER
+# Test for 5.3.1 Ensure permissions on /etc/ssh/sshd_config are configured (Automated)
+source ./configureSSHServer/5-3-1-PermConf-sshd.sh
+
+# Test for 5.3.2 Ensure permissions on SSH private host key files are configured (Automated)
+source ./configureSSHServer/5-3-2-PermSSHPriv.sh
+
+# Test for 5.3.3 Ensure permissions on SSH public host key files are configured (Automated)
+source ./configureSSHServer/5-3-3-PermSSHPub.sh
+
+# Test for 5.3.4 Ensure SSH access is limited (Automated)
+source ./configureSSHServer/5-3-4-SSHAccLimited.sh
+
+# Test for 5.3.5 Ensure SSH LogLevel is appropriate (Automated)
+source ./configureSSHServer/5-3-5-SSHLogLvl.sh
+
+# Test for 5.3.6 Ensure SSH X11 forwarding is disabled (Automated)
+source ./configureSSHServer/5-3-6-SSHX11Dis.sh
+
+# Test for 5.3.7 Ensure SSH MaxAuthTries is set to 4 or less (Automated)
+source ./configureSSHServer/5-3-7-SSHMaxAuthTries.sh
+
+# Test for 5.3.8 Ensure SSH SSH IgnoreRhosts is enabled (Automated)
+source ./configureSSHServer/5-3-8-SSHIgnore.sh
+
+# Test for 5.3.9 Ensure HostbasedAuthentication is disabled (Automated)
+source ./configureSSHServer/5-3-9-HostbasedAuthDis.sh
+
+# Test for 5.3.10 Ensure SSH root login s disabled (Automated)
+source ./configureSSHServer/5-3-10-RootLogDis.sh
+
+# Test for 5.3.11 Ensure SSH PermitEmptyPasswords is disabled (Automated)
+source ./configureSSHServer/5-3-11-PermEmpPass.sh
+
+# Test for 5.3.12 Ensure SSH PermitUserEnvironment is disabled
+source ./configureSSHServer/5-3-12-PermUserEnv.sh
+
+# Test for 5.3.13 Ensure only strong Ciphers are used
+source ./configureSSHServer/5-3-13-Ciphers.sh
+
+# Test for  5.3.14 Ensure only strong MAC algorithms are used
+source ./configureSSHServer/5-3-14-MACAlg.sh
+
+# Test for 5.3.15 Ensure only strong Key Exchange algorithms are used
+source ./configureSSHServer/5-3-15-KeyExchAlg.sh
+
+# Test for 5.3.16 Ensure SSH Idle Timeout Interval is configured"
+source ./configureSSHServer/5-3-16-IdleTimeout.sh
+
+# Test for 5.3.17 Ensure SSH LoginGraceTime is set to one minute or less
+source ./configureSSHServer/5-3-17-LoginGraceTime.sh
+
+# Test for 5.3.18 Ensure SSH warning banner is configured
+source ./configureSSHServer/5-3-18-WarningBanner.sh
+
+# Test for 5.3.19 Ensure SSH PAM is enabled
+source ./configureSSHServer/5-3-19-sshPAM.shadow
+
+# Test for 5.3.20 Ensure SSH AllowTcpForwarding is disabled
+source ./configureSSHServer/5-3-20-sshTcp.sh
+
+# Test for 5.3.21 Ensure SSH MaxStartups is configured
+source ./configureSSHServer/5-3-21-sshMaxStartups.sh
+
+# Test for 5.3.22 Ensure SSH MaxSessions is limited
+source ./configureSSHServer/5-3-22-sshMaxSess.sh
+ 
+
+
+# CONFIUGRE PAM
+# Test for 5.4.1 Ensure password creation requirements are configured (Automated)
+source ./configurePAM/5-4-1-PWCreationRequirements.sh
+
+# Test for 5.4.2 Ensure lockout for failed password attempts is configured (Automated)
+source ./configurePAM/5-4-2-LockoutFailedAttempts.sh
+
+# Test for 5.4.3 Ensure password hashing algorithm is SHA-512 (Automated)
+source ./configurePAM/5-4-3-PWHashing.sh
+
+# Test for 5.4.4 Ensure password reuse is limited (Automated)
+source ./configurePAM/5-4-4-PWReuseLimited.sh
+
+
+
+# FILESYSTEM CONFIGURATION
+# Test for 1.1.1.1 Ensure mounting of cramfs filesystems is disabled (Automated)
+source ./filesystemConfiguration/1-1-1-1-CramfsDis.sh
+
+# Test for 1.1.1.2 Ensure mounting of squashfs filesystems is disabled (Automated)
+source ./filesystemConfiguration/1-1-1-2-SquashfsDis.sh
+
+# Test for 1.1.1.3 Ensure mounting of udf filesystems is disabled (Automated)
+source ./filesystemConfiguration/1-1-1-3-UDFDis.sh
+
+
+
+# DISABLE UNUSED NETWORK PROTOCOLS AND DEVICES
+# Test for 3.1.1 Disable IPv6 (Manual)
+source ./disableNetworkProtocols/3-1-1-DisableIPv6.sh
+
+# Test for 3.1.2 Ensure wireless interfaces are disabled (Automated)
+source ./disableNetworkProtocols/3-1-2-EnsureWirelessDis.sh
+
+
+
+# FIREWALL CONFIGURATION
+# Test for 3.5.1.1 Ensure firewalld is installed (Automated)
+source ./firewallConf/3-5-1-1-firewalldInstall.sh
+
+# Test for 3.5.1.2 Ensure iptables-services not isntalled with firewalld (Automated)
+source ./firewallConf/3-5-1-2-iptablesServices.sh
+
+# Test for 3.5.1.3 Ensure nftables either not installed or masked with firewalld (Automated)
+source ./firewallConf/3-5-1-3-nftables.sh
+
+# Test for 3.5.1.4 Ensure firewalld service enabled and running (Automated)
+source ./firewallConf/3-5-1-4-firewalldService.sh
+
+# Test for 3.5.1.5 Ensure firewalld default zone is set (Automated)
+source ./firewallConf/3-5-1-5-firewalldDefZone.sh
+
+# Test for 3.5.1.6 Ensure network interfaces are asigned to appropraite zone (Manual)
+source ./firewallConf/3-5-1-6-networkIntZone.sh
+
+# Test for .5.1.7 Ensure firewalld drops unnecessary services and ports (Manual)
+source ./firewallConf/3-5-1-7-firewalldDrop.sh
+
+
+
+# CONFIGURE SYSTEM ACCOUNTING (AUDITD)
+# Test for 4.1.1.1 Ensure auidtd is installed
+source ./conSysAcc/4-1-1-1-auditsInstalled.sh
+
+# Test for 4.1.1.2 Ensure auditd service is enabled and running
+source ./conSysAcc/4-1-1-2-auditdService.sh
+
+# Test for 4.1.1.3 Ensure auditing for processes that start prior to auditd is enabled
+source ./conSysAcc/4-1-1-3-auditdPro.sh
+
+
+
+# USER AND GROUP SETTINGS
+# Test for 6.2.1 Ensure accounts in /etc/passwd use shadowed passwords (Automated)
+source ./userGroupSet/6-2-1-acctShadowed.sh
+
+# Test for 6.2.2 Ensure /etc/shadow password fields are not empty (Automated)
+source ./userGroupSet/6-2-2-etcShadPass.sh
+
+# Test for 6.2.3 Ensure all groups in /etc/passwd exist in /etc/group (Automated)
+source ./userGroupSet/6-2-3-groupsExist.sh
+
+# Test for 6.2.4 Ensure shadow group is empty (Automated)
+source ./userGroupSet/6-2-4-shadowGrEmp.sh
+
+# Test for 6.2.5 Ensure no duplicate user names exist (Automated)
+source ./userGroupSet/6-2-5-noDupeUser.sh
+
+# Test for 6.2.6 Ensure no duplicate group names exist (Automated)
+source ./userGroupSet/6-2-6-noDupeGroup.sh
+
+# Test for 6.2.7 Ensure no duplicate UIDs exist (Automated)
+source ./userGroupSet/6-2-7-noDupeUIDs.sh
+
+# Test for 6.2.8 Ensure no duplicate GIDs exist (Automated)
+source ./userGroupSet/6-2-8-noDupeGIDs.sh
+
+# Test for 6.2.9 Ensure root is the only UID 0 account (Automated)
+source ./userGroupSet/6-2-9-rootUID.sh
+
+# Test for 6.2.10 Ensure root PATH Integrity (Automated)
+source ./userGroupSet/6-2-10-rootPATH.sh
+
+# Test for 6.2.11 Ensure all users' home directories exist (Automated)
+source ./userGroupSet/6-2-11-userDirec.sh
+
+# Test for 6.2.12 Ensure users own their home directories (Automated)
+source ./userGroupSet/6-2-12-userOwn.sh
+
+# Test for 6.2.13 Ensure users' home directories permissions are 750 or more restrictive (Automated)
+source ./userGroupSet/6-2-13-userPerm.sh
+
+# Test for 6.2.14 Ensure users' dot files are not group or world writable (Automated)
+source ./userGroupSet/6-2-14-userDotFiles.sh
+
+# Test for 6.2.15 Ensure no users have .forward files (Automated)
+source ./userGroupSet/6-2-15-userForFiles.sh
+
+# Test for 6.2.16 Ensure no users have .netrc files (Automated)
+source ./userGroupSet/6-2-16-userNetrc.sh
+
+# Test for 6.2.17 Ensure no users have .rhosts files (Automated)
+source ./userGroupSet/6-2-17-userRhosts.sh
+
+
+# FILESYSTEM INTEGRITY CHECKING
+# Testing 1.3.1 Ensure AIDE is Installed
+source ./filesystemIntegrityChecking/1-3-1-EnsureAIDEInstalled.sh
+
+# Testing 1.3.2 Ensure filesystem integrity is regularly checked
+source ./filesystemIntegrityChecking/1-3-2-EnsureFilesystemIntegrityRegularlyChecked.sh
+
+
+# SPECIAL PURPOSE SERVICES
+# Testing 2.2.1.1 Ensure time synchronization is in use
+source ./specialPurposeServices/2-2-1-1-TimeSynch.sh
+
+# Testing 2.2.1.2 Ensure chrony is configured
+source ./specialPurposeServices/2-2-1-2-EnsureChronyConfigured.sh
+
+# Testing 2.2.1.3 Ensure ntp is configured
+source ./specialPurposeServices/2-2-1-3-EnsureNTPConfigured.sh
+
+# Testing 2.2.2 Ensure X11 Server components are not installed
+source ./specialPurposeServices/2-2-2-EnsureX11ComponenetsNotInstalled.sh
+
+# Testing 2.2.3 Ensure Avahi Server is not installed
+source ./specialPurposeServices/2-2-3-EnsureAvahiServerNotInstalled.sh
+
+# Testing 2.2.4 Ensure CUPS is not installed
+source ./specialPurposeServices/2-2-4-EnsureCUPSNotInstalled.sh
+
+# Testing 2.2.5 Ensure DHCP Server is not installed
+source ./specialPurposeServices/2-2-5-EnsureDHCPServerNotInstalled.sh
+
+# Testing 2.2.6 Ensure LDAP Server is not installed
+source ./specialPurposeServices/2-2-6-EnsureLDAPServerNotInstalled.sh
+
+# Testing 2.2.7 Ensure DNS Server is not installed
+source ./specialPurposeServices/2-2-7-EnsureDNSServerNotInstalled.sh
+
+# Testing 2.2.8 Ensure FTP Server is not installed
+source ./specialPurposeServices/2-2-8-EnsureFTPServerNotInstalled.sh
+
+# Testing 2.2.9 Ensure HTTP Server is not installed
+source ./specialPurposeServices/2-2-9-EnsureHTTPServerNotInstalled.sh
+
+# Testing 2.2.10 Ensure IMAP and POP3 Server is not installed
+source ./specialPurposeServices/2-2-10-EnsureMailServersNotInstalled.sh
+
+# Testing 2.2.11 Ensure Samba is not installed
+source ./specialPurposeServices/2-2-11-EnsureSambaNotInstalled.sh
+
+# Testing 2.2.12 Ensure HTTPProxy is not installed
+source ./specialPurposeServices/2-2-12-EnsureHTTPProxyNotInstalled.sh
+
+# Testing 2.2.13 Ensure Net-SNMP is not installed
+source ./specialPurposeServices/2-2-13-EnsureNet-SNMPNotInstalled.sh
+
+# Testing 2.2.14 Ensure NIS Server is not installed
+source ./specialPurposeServices/2-2-14-EnsureNISServerNotInstalled.sh
+
+# Testing 2.2.15 Ensure Telnet-Server is not installed
+source ./specialPurposeServices/2-2-15-EnsureTelnetServerNotInstalled.sh
+
+# Testing 2.2.16 Ensure mail transfer agent is configured for local-only mode
+source ./specialPurposeServices/2-2-16-EnsureMailTransferConfigured.sh
+
+# Testing 2.2.17 Ensure nfs-utils is not installed or the nfs-server service is masked
+source ./specialPurposeServices/2-2-17-EnsureNFS-UtilsNotInstalled.sh
+
+# Testing 2.2.18 Ensure rpcbind is not installed or the rpcbind services are masked
+source ./specialPurposeServices/2-2-18-EnsureRPCBindNotInstalled.sh
+
+# Testing 2.2.19 Ensure rsync is not installed or the rsync service is masked
+source ./specialPurposeServices/2-2-19-EnsureRSyncNotInstalled.sh
+
+
+# ADDITIONAL PROCESS HARDENING
+# Test for 1.5.1 Ensure core dumps are restricted (Automated)
+source ./addProHard/1-5-1-coreDumps.sh
+
+# Test for 1.5.2 Ensure XD/NX suppport is enabled (Automated)
+source ./addProHard/1-5-2-xdnxSupport.shadow
+
+# Test for 1.5.3 Ensure address space layout randomization (ASLR) is enabled (Automated)
+source ./addProHard/1-5-3-aslrEnabled.sh
+
+# Test for 1.5.4 1.5.4 Ensure prelink is not installed (Automated)
+source ./addProHard/1-5-4-prelink.sh
+
+
+
+# INETD SERVICES
+# Test for Testing for 2.1.1 Ensure xinetd is not installed (Automated)
+source ./inetdServ/2-1-1-xinetd.sh
+
+
+
+# SERVICE CLIENTS
+# Test for 2.3.1 Ensure NIS Client is not installed (Automated)
+source ./serviceCl/2-3-1-nisCl.sh
+
+# Test for 2.3.2 Ensure rsh client is not installed (Automated)
+source ./serviceCl/2-3-2-rshCl.sh
+
+# Test for 2.3.3 Ensure talk client is not installed (Automated)
+source ./serviceCl/2-3-3-talkCl.sh
+
+# Test for 2.3.4 Ensure telnet client is not installed (Automated)
+source ./serviceCl/2-3-4-telnetCl.sh
+
+# Test for 2.3.5 Ensure LDAP client is not installed (Automated)
+source ./serviceCl/2-3-5-ldapCl.sh
+
+# Test for 2.4 Ensure nonessential services are removed or masked (Manual)
+source ./serviceCl/2-4-nonessServ.sh
+
+
+
+# NETWORK PARAMETERS (HOST AND ROUTER)
+# Test for 3.3.1 Ensure source routed packets are not accepted (Automated)
+source ./netParHostRouter/routedPackets.sh
+
+# Test for 3.3.2 Ensure ICMP redirects are not accepted (Automated)
+source ./netParHostRouter/icmpRedir.sh
+
+# Test for 3.3.3 Ensure secure ICMP redirects are not accepted (Automated)
+source ./netParHostRouter/secIcmpRedir.sh
+
+# Test for 3.3.4 Ensure suspicious packets are logged (Automated)
+source ./netParHostRouter/susPack.sh
+
+# Test for 3.3.5 Ensure broadcast ICMP requests are ignored (Automated)
+source ./netParHostRouter/broadICMPReq.sh
+
+# Test for 3.3.6 Ensure bogus ICMP responses are ignored (Automated)
+source ./netParHostRouter/bogusICMP.sh
+
+# Test for 3.3.7 Ensure Reverse Path Filtering is enabled (Automated)
+source ./netParHostRouter/revPath.sh
+
+# Test for Ensure TCP SYN Cookies is enabled (Automated)
+source ./netParHostRouter/tcpSYN.sh
+
+# Test for 3.3.9 Ensure IPv6 router advertisements are not accepted (Automated)
+source ./netParHostRouter/ipv6RouterAd.sh
+
+
+
+# UNCOMMON NETWORK PROTOCOLS
+# Test for 3.4.1 Ensure DCCP is disabled (Automated)
+source ./uncomNetPro/3-4-1-dccpDis.sh
+
+# Test for 3.4.2 Ensure SCTP is disabled (Automated)
+source ./uncomNetPro/3-4-2-sctpDis.sh
+
+
+
+# GNOME DISPLAY MANAER
+# Test for 1.8.1 Ensure GNOME Display Manager is removed
+source ./gnomeDisMan/1-8-1-EnsureGNOMEDisplay.sh
+
+# Test for 1.8.2 Ensure GDM login banner is configured
+source ./gnomeDisMan/1-8-2-EnsureGDMLogin.sh
+
+# Test for 1.8.3 Ensure last logged in user display is disabled
+source ./gnomeDisMan/1-8-3-EnsureLastLogged.sh
+
+# Test for 1.8.4 Ensure XDCMP is not enabled
+source ./gnomeDisMan/1-8-4-EnsureXDCMPNotEnabled.sh
+
+# Test for 1.9 Ensure updates, patches, and additional security software are installed
+source ./gnomeDisMan/1-9-EnsureUpdatesPatchesSoftware.sh
+
+
+
+# NETWORK PARAMETERS (HOST ONLY)
+# Test for 3.2.1 Ensure IP forwarding is disabled
+source ./netParHostOnly/3-2-1-EnsureIPForwarding.sh
+
+# Test for 3.2.2 Ensure packet redirect sending is disabled
+source ./netParHostOnly/3-2-2-EnsurePacketRedirect.sh
+
+
+
+# CONFIGURE TIME-BASED JOB SCHEDULERS
+# Test for 5.1.1 Ensure cron daemon is enabled and running
+source ./configureTimeBased/5-1-1-EnsureCronDaemon.sh
+
+# Test for 5.1.2 Ensure permissions on /etc/crontab are configured
+source ./configureTimeBased/5-1-2-EnsurePermCronTab.sh
+
+# Test for 5.1.3 Ensure permissions on /etc/cron.hourly are configured
+source ./configureTimeBased/5-1-3-EnsurePermCronHourly.sh
+
+# Test for 5.1.4 Ensure permissions on /etc/cron.daily are configured
+source ./configureTimeBased/5-1-4-EnsurePermCronDaily.sh
+
+# Test for 5.1.5 Ensure permissions on /etc/cron.weekly are configured
+source ./configureTimeBased/5-1-5-EnsurePermCronWeekly.sh
+
+# Test for 5.1.6 Ensure permissions on /etc/cron.monthly are configured
+source ./configureTimeBased/5-1-6-EnsurePermMonthly.sh
+
+# Test for 5.1.7 Ensure permissions on /etc/cron.d are configured
+source ./configureTimeBased/5-1-7-EnsurePermCronD.sh
+
+# Test for 5.1.8 Ensure cron is restricted to authorized users
+source ./configureTimeBased/5-1-8-EnsureCronRestrict.sh
+
+# Test for 5.1.9 Ensure at is restricted to authorized users
+source ./configureTimeBased/5-1-9-EnsureCronAtRestrict.sh
+
+
+
+# COMMAND LINE WARNING BANNERS
+# Test for 1.7.1 Ensure message of the day is configured properly
+source ./commandLineWarn/1-7-1-EnsureMessageOfDay.sh
+
+# Test for 1.7.2 Ensure local login warning banner is configured properly
+source ./commandLineWarn/1-7-2-EnsureLocalLogin.sh
+
+# Test for 1.7.3 Ensure remote login warning banner is configured properly
+source ./commandLineWarn/1-7-3-EnsureRemoteLogin.sh
+
+# Test for 1.7.4 Ensure permissions on /etc/motd are configured
+source ./commandLineWarn/1-7-4-EnsurePermMotd.sh
+
+# Test for 1.7.5 Ensure permissions on /etc/issue are configured
+source ./commandLineWarn/1-7-5-EnsurePermIssue.sh
+
+# Test for 1.7.6 Ensure permissions on /etc/issue.net are configured
+source ./commandLineWarn/1-7-6-EnsurePermIssueNet.sh
