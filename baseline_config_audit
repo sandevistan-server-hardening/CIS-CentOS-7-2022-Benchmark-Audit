@@ -1,3 +1,6 @@
+# Hardness profile selection
+source profile/hardnessProfileSelector.sh
+
 # MANDATORY ACCESS CONTROL
 # Test for 1.6.1.1 ensuring SELinux is installed
 source ./mandatoryAccessControl/1-6-1-1-SELinuxInstalled.sh
